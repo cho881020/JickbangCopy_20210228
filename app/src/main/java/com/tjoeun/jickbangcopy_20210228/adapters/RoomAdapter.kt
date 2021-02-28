@@ -37,6 +37,13 @@ class RoomAdapter(
 //        설명 문구 : 있는 그대로.
         descriptionTxt.text = data.description
 
+//        주소/층수 => ~~시 ~~구, 5층 => String 가공.
+
+//        층수 : 1이상 , 0, -1 이하냐 에 따라 다르게 가공되어야함.
+//        상황에 따라 다르게 층수를 가공하는 기능을 => Room의 기능으로 추가해보자.
+
+        addressAndFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
+
         return row
     }
 
